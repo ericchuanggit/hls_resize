@@ -16,13 +16,16 @@
 
 MK_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
 CUR_DIR := $(patsubst %/,%,$(dir $(MK_PATH)))
-XF_PROJ_ROOT ?= $(shell bash -c 'export MK_PATH=$(MK_PATH); echo $${MK_PATH%/L1/*}')
+XF_PROJ_ROOT ?= "/home/eric/Vitis_Libraries/vision"
 
 # MK_INC_BEGIN hls_common.mk
 
 .PHONY: help
 
 help::
+	@echo 'MAKEFILE_LIST "$(MAKEFILE_LIST)"'
+	@echo 'MK_PATH "$(MK_PATH)"'
+	@echo 'XF_PROJ_ROOT "$(XF_PROJ_ROOT)"'
 	@echo ""
 	@echo "Makefile Usage:"
 	@echo ""
